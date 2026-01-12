@@ -1,1 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Destinos Turísticos Completos - EMI & EMI</title>
 
+<style>
+:root {
+    --purple-main: #5e2ced;
+    --purple-light: #f3efff;
+    --text-dark: #2d2d2d;
+    --text-soft: #555;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #fcfcfc;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: var(--white);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--purple-main);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+/* ================= HERO ================= */
+.hero-title {
+    background: var(--purple-main);
+    color: white;
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.hero-title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* ================= CONTENEDOR ================= */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ================= BLOQUE PAÍS ================= */
+.pais-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 80px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    align-items: center;
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.pais-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pais-block:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* ================= IMAGEN ================= */
+.pais-img {
+    flex: 1;
+    min-width: 350px;
+    height: 500px;
+    object-fit: cover;
+
+    opacity: 0;
+    transform: translateX(-30px) scale(1.04);
+    transition: transform 1.2s ease, opacity 1.2s ease;
+    will-change: transform;
+}
+
+.pais-block.visible .pais-img {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+/* ================= TEXTO ================= */
+.pais-info {
+    flex: 1.2;
+    padding: 40px;
+    min-width: 350px;
+
+    opacity: 0;
+    transform: translateX(35px);
+    transition: opacity 0.9s ease 0.35s, transform 0.9s ease 0.35s;
+}
+
+.pais-block.visible .pais-info {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.pais-tag {
+    color: var(--purple-main);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.pais-nombre {
+    font-size: 2.2rem;
+    margin: 10px 0 20px;
+    color: #111;
+}
+
+.pais-desc {
+    color: var(--text-soft);
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+.precio {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--purple-main);
+    display: block;
+    margin-top: 20px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .pais-img {
+        height: 300px;
+    }
+    .pais-nombre {
+        font-size: 1.8rem;
+    }
+    .pais-block {
+        margin-bottom: 40px;
+    }
+}
+
+/* ================= WHATSAPP ================= */
+.btn-ws {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">EMI & EMI Travel</div>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Destinos</a>
+        <a href="#">Contacto</a>
+    </nav>
+</header>
+
+<div class="hero-title">
+    <h1>Nuestros Destinos 2026</h1>
+    <p>Explora el mundo con el respaldo de expertos en asistencia y rutas personalizadas.</p>
+</div>
+
+<div class="container">
+
+    <!-- EGIPTO -->
+    <article class="pais-block">
+        <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=800&q=80" class="pais-img parallax" alt="Egipto">
+        <div class="pais-info">
+            <span class="pais-tag">África del Norte</span>
+            <h2 class="pais-nombre">Egipto: Cuna de Civilizaciones</h2>
+            <p class="pais-desc">
+                Egipto no es solo un viaje, es un reencuentro con la historia de la humanidad. Desde la mirada eterna de la Esfinge hasta la majestuosidad de las Pirámides de Giza, cada paso es una leyenda. El contraste entre El Cairo y un crucero por el Nilo convierte este destino en una experiencia única.
+            </p>
+            <span class="precio">Desde 704€</span>
+        </div>
+    </article>
+
+    <!-- ALBANIA -->
+    <article class="pais-block">
+        <img src="https://images.unsplash.com/photo-1580993183019-3382592534f3?auto=format&fit=crop&w=800&q=80" class="pais-img parallax" alt="Albania">
+        <div class="pais-info">
+            <span class="pais-tag">Europa Balcánica</span>
+            <h2 class="pais-nombre">Albania: El Secreto Mediterráneo</h2>
+            <p class="pais-desc">
+                Albania es uno de los secretos mejor guardados de Europa. Playas vírgenes, ciudades históricas y una hospitalidad auténtica hacen de este destino una joya emergente para viajeros que buscan experiencias reales.
+            </p>
+            <span class="precio">Desde 1.826€</span>
+        </div>
+    </article>
+
+    <!-- PERÚ -->
+    <article class="pais-block">
+        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80" class="pais-img parallax" alt="Perú">
+        <div class="pais-info">
+            <span class="pais-tag">Sudamérica</span>
+            <h2 class="pais-nombre">Perú e Imperio Inca</h2>
+            <p class="pais-desc">
+                Desde Machu Picchu hasta el Valle Sagrado, Perú ofrece una conexión profunda con la historia, la naturaleza y una de las gastronomías más premiadas del mundo.
+            </p>
+            <span class="precio">Desde 2.491€</span>
+        </div>
+    </article>
+
+    <!-- MÉXICO -->
+    <article class="pais-block">
+        <img src="https://images.unsplash.com/photo-1512813588311-5494ec682357?auto=format&fit=crop&w=800&q=80" class="pais-img parallax" alt="México">
+        <div class="pais-info">
+            <span class="pais-tag">Norteamérica</span>
+            <h2 class="pais-nombre">México: Tesoros del Yucatán</h2>
+            <p class="pais-desc">
+                Cultura maya, cenotes sagrados y el Caribe mexicano se combinan en una experiencia vibrante llena de color, sabor y tradición.
+            </p>
+            <span class="precio">Desde 1.286€</span>
+        </div>
+    </article>
+
+    <!-- REP. DOMINICANA -->
+    <article class="pais-block">
+        <img src="https://images.unsplash.com/photo-1544918877-460635b6d13e?auto=format&fit=crop&w=800&q=80" class="pais-img parallax" alt="República Dominicana">
+        <div class="pais-info">
+            <span class="pais-tag">Caribe</span>
+            <h2 class="pais-nombre">Rep. Dominicana: Miches y Samaná</h2>
+            <p class="pais-desc">
+                Playas vírgenes, ballenas jorobadas y naturaleza exuberante hacen de este destino un refugio caribeño auténtico.
+            </p>
+            <span class="precio">Desde 1.604€</span>
+        </div>
+    </article>
+
+    <!-- SICILIA -->
+    <article class="pais-block">
+        <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80" class="pais-img parallax" alt="Sicilia">
+        <div class="pais-info">
+            <span class="pais-tag">Europa - Circuitos 2026</span>
+            <h2 class="pais-nombre">Sicilia y el Sur de Italia</h2>
+            <p class="pais-desc">
+                Arte, historia y gastronomía se unen en un viaje por la esencia de la dolce vita italiana, entre volcanes, templos y costas mediterráneas.
+            </p>
+            <span class="precio">Desde 1.495€</span>
+        </div>
+    </article>
+
+</div>
+
+<a href="https://wa.me/34690024580" class="btn-ws" target="_blank">Consultar por WhatsApp</a>
+
+<script>
+/* ========= REVEAL ON SCROLL (POO) ========= */
+class RevealOnScroll {
+    constructor(element) {
+        this.element = element;
+        this.init();
+    }
+
+    init() {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.element.classList.add('visible');
+                    observer.unobserve(this.element);
+                }
+            });
+        }, { threshold: 0.25 });
+
+        observer.observe(this.element);
+    }
+}
+
+/* ========= PARALLAX SUAVE (POO) ========= */
+class ParallaxImage {
+    constructor(element) {
+        this.element = element;
+        this.speed = 0.15;
+        this.onScroll = this.onScroll.bind(this);
+        window.addEventListener('scroll', this.onScroll, { passive: true });
+    }
+
+    onScroll() {
+        const rect = this.element.getBoundingClientRect();
+        const offset = rect.top * this.speed;
+        this.element.style.transform = `translateY(${offset}px)`;
+    }
+}
+
+/* ========= INIT ========= */
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.pais-block').forEach(el => new RevealOnScroll(el));
+    document.querySelectorAll('.parallax').forEach(img => new ParallaxImage(img));
+});
+</script>
+
+</body>
+</html>
